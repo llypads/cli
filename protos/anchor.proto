@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message Object {
+  enum ObjectType {
+    COMMIT = 0;
+    TREE = 1;
+    BLOB = 2;
+    TAG = 3;
+  }
+
+  ObjectType type = 1;
+  bytes content = 2;
+  int32 size = 3;
+}
+
+message Anchor {
+  map<string, Object> objects = 1;
+  string prev_anchor = 2;
+}
