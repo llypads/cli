@@ -35,7 +35,6 @@ class Repo(InitializedBase):
                 print("  Transaction: %s" % (address))
                 print("\n  https://etherscan.io/tx/%s\n" % (address))
 
-
             else:
                 print(response)
         def reject():
@@ -80,3 +79,23 @@ class Repo(InitializedBase):
             print("Rejected")
 
         self.execute("Creating bounty", 30000, confirm, reject)
+
+    # def propose(self):
+    #     # bytes32 bountyId, bytes32 gitHash, bytes32 anchorAddress, bytes32 contentAddress
+    #     bounty_id = self.options['<bountyid>']
+    #
+    #     def confirm(gas_price, gas_limit):
+    #         address = self.options['<address>']
+    #         response = self.client.repo.transact(address, "createBounty", [bounty_id, 'active'], value=1, gasprice=gas_price, gaslimit=gas_limit)
+    #         if 'result' in response:
+    #             address = response['result']
+    #             print("\nCreating transaction:")
+    #             print("  Transaction: %s" % address)
+    #             print("\n  https://etherscan.io/tx/%s\n" % (address))
+    #
+    #         else:
+    #             print(response)
+    #     def reject():
+    #         print("Rejected")
+    #
+    #     self.execute("Creating bounty", 30000, confirm, reject)
